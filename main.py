@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import pyttsx3
+import datetime
 
 
 #Cria um reconhecedor
@@ -18,11 +19,24 @@ try:
             comando = comando.lower()
 
             if 'ok sexta-feira' in comando:
+                comando = comando.replace('ok sexta-feira', '')
                 print(comando)
                 maquina.say('Olá, como posso ajudar?')
                 maquina.runAndWait()
+
+                if 'horas' in comando:
+                    hora = datetime.datetime.now().strftime('%H:%M')
+                    maquina.say('Agora são' + hora)
+                    maquina.runAndWait()
 
 
 
 except:
     print("Desculpe, não consegui entender.")
+
+
+def horario(comando):
+    if 'horas' in comando:
+        hora = datetime.datetime.now().strftime('%H:%M')
+        maquina.say('Agora são' + hora)
+        maquina.runAndWait()
