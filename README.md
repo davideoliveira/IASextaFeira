@@ -30,10 +30,11 @@ os eventos cadastrados.
 
 Passo a passo:
 1-Instalar SpeechRecognition 3.8.1
-    pip install speech recognition
+    pip install SpeechRecognition               
 
 2-Instalar o PyAudio
     pip install 'url'
+    pip install D:\PyAudio-0.2.11-cp310-cp310-win_amd64.whl
 
 3 - Instalar pyttsx3 2.90
     pip install pyttsx3
