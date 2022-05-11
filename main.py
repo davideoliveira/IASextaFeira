@@ -4,9 +4,8 @@ import datetime
 
 nome = 'ok sexta-feira'
 dono = 'mestre'
-#Cria um reconhecedor
+
 audio = sr.Recognizer()
-#Cria sintetizador de voz
 maquina = pyttsx3.init()
 
 def ouvindo():
@@ -54,8 +53,6 @@ def ler_nome():
 
 
 
-
-#Abri o microfone para captura
 with sr.Microphone() as source:
         while True:
             comando = ouvindo()            
