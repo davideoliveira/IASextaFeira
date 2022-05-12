@@ -11,6 +11,15 @@ Requisitos:
 3 - Instalar pyttsx3 2.90
     pip install pyttsx3
 
+4 - Instalar google
+    pip install google
+
+5 - instalar pywhatkit
+    pip install pywhatkit
+
+6 - Instalar flask
+    pip3 install flask
+
 
 
 Inspiração:

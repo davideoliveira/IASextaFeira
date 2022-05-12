@@ -1,6 +1,11 @@
 import speech_recognition as sr
 import pyttsx3
 import datetime
+import webbrowser as wb
+import subprocess
+import os
+import pywhatkit as kit
+
 
 nome = 'ok sexta-feira'
 dono = 'mestre'
@@ -51,6 +56,36 @@ def ler_nome():
         maquina.say('seu nome é ' + dono)
         maquina.runAndWait()
 
+def pesquisar(comando):
+    comando = comando.replace('pesquisar por', '')
+    wb.get('windows-default').open_new(f'https://www.google.com/search?q={comando}')
+
+def tocar(comando):
+    comando = comando.replace('tocar', '')
+    kit.playonyt(comando)
+
+def abrir(comando):
+    comando = comando.replace('abrir', '')
+    if 'calculadora' in comando:
+        subprocess.Popen(['calc'])
+    elif 'notas' in comando:
+        subprocess.Popen(['notepad'])
+    
+
+def fechar(comando):
+    comando = comando.replace('fechar', '')
+    if 'notas' in comando:
+        subprocess.run(['taskkill', '/IM', 'notepad.exe'])
+    elif 'chrome' in comando:
+        subprocess.run(['taskkill', '/IM', 'chrome.exe'])
+    elif 'firefox' in comando:
+        subprocess.run(['taskkill', '/IM', 'firefox.exe'])
+
+
+
+
+
+
 
 
 with sr.Microphone() as source:
@@ -72,6 +107,15 @@ with sr.Microphone() as source:
                 elif 'qual o meu nome' in comando:
                     maquina.say('seu nome é ' + dono)
                     maquina.runAndWait()
+                elif 'pesquisar' in comando:
+                    pesquisar(comando)
+                elif 'tocar' in comando:
+                    tocar(comando)
+                elif 'abrir' in comando:
+                    abrir(comando)
+                elif 'fechar' in comando:
+                    fechar(comando)
+
                 else :
                     maquina.say('Desculpe, não entendi')
                     maquina.runAndWait()
