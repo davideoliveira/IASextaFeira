@@ -7,12 +7,13 @@ Requisitos:
 
 2-Instalar o PyAudio
     pip install PyAudio-0.2.11-cp310-cp310-win_amd64.whl
+    pip install PyAudio
 
 3 - Instalar pyttsx3 2.90
     pip install pyttsx3
 
-4 - Instalar google
-    pip install google
+4 - Instalar requests
+    pip install requests
 
 5 - instalar pywhatkit
     pip install pywhatkit
